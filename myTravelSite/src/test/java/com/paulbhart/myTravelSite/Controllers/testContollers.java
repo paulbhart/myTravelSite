@@ -6,24 +6,15 @@ import java.util.Map;
 
 import org.springframework.ui.Model;
 
-import com.paulbhart.myTravelSite.Model.CostRating;
-import com.paulbhart.myTravelSite.Model.ReturnResultsJson;
-import com.paulbhart.myTravelSite.Model.Hotel;
-import com.paulbhart.myTravelSite.Model.ReviewRating;
-import com.paulbhart.myTravelSite.Model.TwoCharState;
 import com.paulbhart.myTravelSite.Services.MockSearchService;
 
 import org.springframework.ui.ExtendedModelMap;
-import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import com.paulbhart.myTravelSite.Services.SearchServiceInterface;
 import static org.junit.Assert.*;
 
 import org.codehaus.jackson.map.ObjectMapper;
 import org.junit.Before;
 import org.junit.Test;
-
-import com.paulbhart.myTravelSite.Model.ReturnResultsJson;
 
 public class testContollers {
 
@@ -45,7 +36,7 @@ public class testContollers {
 	String HotelID = "1";
 	ExtendedModelMap model = new ExtendedModelMap();
 	Locale locale = new Locale("US");
-	assertEquals("JsonView",controller.getHotel(HotelID,locale, (Model) model));
+	assertEquals("JsonView",controller.getHotel(HotelID,locale, model));
 	
 	String json = (String) model.get("json");
 	

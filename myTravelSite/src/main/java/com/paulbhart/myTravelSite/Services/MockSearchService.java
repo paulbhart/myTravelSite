@@ -1,6 +1,7 @@
 package com.paulbhart.myTravelSite.Services;
 
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.paulbhart.myTravelSite.Model.Address;
@@ -10,9 +11,11 @@ import com.paulbhart.myTravelSite.Model.TwoCharState;
 import com.paulbhart.myTravelSite.Model.Hotel;
 
 
-public class MockSearchService implements SearchServiceInterface {
+public class MockSearchService implements SearchServiceInterface  {
+    
+    
 	@Override
-	public ArrayList<Hotel> getHotelsByState(TwoCharState XXState) {
+	public ArrayList<Hotel> getHotelsByState(TwoCharState XXState) throws ClassNotFoundException, SQLException {
 		ArrayList<Hotel> hotelList = new ArrayList<Hotel>(); 
 		
 		TwoCharState myState = XXState;
@@ -34,7 +37,7 @@ public class MockSearchService implements SearchServiceInterface {
 		
 	}
 		
-	public Hotel getHotel(int id) throws Exception {
+	public Hotel getHotel(int id) throws ClassNotFoundException, SQLException  {
 		Address addr1 = new Address("2222 Rich Ave", "", "Los Angles", TwoCharState.CA, "United States", "88888");
 		Hotel hotel1 = new Hotel("Crown Prince", CostRating.$$$$ , ReviewRating.FourStars, addr1);
 		return hotel1;
